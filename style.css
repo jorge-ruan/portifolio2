@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+
+:root {                                             /* FORMATO DE UMA VARIÁVEL*/
+      --cor-primaria: #000000;
+      --cor-secundaria:#F6F6F6;
+      --cor-terciaria:#22D4FD;
+      --cor-hover:#272727;
+
+      --font-primaria: 'Krona One', 'sans-serif';
+      --font-secundaria: 'Montserrat', sans-serif;
+}
+* {
+      margin : 0;
+      padding : 0;
+}
+.cabecalho{
+      padding: 2% 8%;
+}
+.cabecalho_menu{ 
+      display: flex;       
+      gap: 5%;                                    /* o gap também é uma propriedade do (flax-box), por isso devemos utilizar o display: flex*/
+      font-size:1.5rem;
+      font-family: var(--font-secundaria);        /* COMO UMA VARIÁVEL CSS É USADA*/
+      font-weight:600;
+}
+.cabecalho_menu_link{
+      text-decoration:none ;
+      color:var(--cor-terciaria);
+}
+.cabecalho_menu_link:hover{
+      background-color:var(--cor-hover);
+      border-radius: 8px;
+      cursor: pointer;   
+}
+body {
+      box-sizing: border-box;                     /*não permite que as imagens saiam do corpo*//*height: 100vh;faz com que a pagina ocupe a tela toda*/
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+}
+.apresentacao {
+      padding: 5% 8%; 
+      display: flex;                             /*é necessária pois fornece várias possibilidades para o layout */
+      align-items: center;
+      gap:5%;
+}
+.apresntacao__conteudo{
+      width: 50%;                             /* aumenta a largura do bloco pai*/
+      display: flex; 
+      flex-direction: column;
+      gap: 40px;                                /*gera um espaço entre os elementos */
+}
+h1 {
+      color: whitesmoke;                      /* este color muda a cor*/
+}
+.titulo_azul { 
+      color: var(--cor-terciaria)
+}
+.apresentacao__conteudo__titulo{
+      font-size: 2.25rem;                        /* muda o tamanho da fonte(letras)*/
+      font-family: var(--font-primaria);
+      font-weight: 400;
+      font-style: normal; 
+}
+.apresentacao__conteudo__texto{
+      font-size: 1.5rem;                        /*(1rem equivale à 16px) usamos o rem para que o texto se adapte ao tamanho da fonte do navegador do usuário!.*/
+      font-family: var(--font-secundaria);      /* o metodo font-family é utilizado para mudar o estilo de letra do layout*/
+      font-optical-sizing: auto;
+      font-weight: 400;              
+      font-style: normal;
+}
+.apresentacao__links{
+      display: flex;                            /* por padrão fica em linha */
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;                      /* centraliza itens */
+}
+.apresentacao__links__subtitulo{
+      font-family: var(--font-primaria);
+      font-weight: 400;
+      font-size: 1.5rem;
+}
+.apresentacao__links__navegacao{
+      display: flex;
+      justify-content: center;                  /* comando para centralizar uma imagem e um texto dentro de um botão*/
+      gap: 16px;
+      border: 2px solid var(--cor-terciaria);
+      width: 50%;                             /* muda a largura da "borda"*/
+      text-align: center;                       /*esse comando é utilizado apenas para centralizar textos*/
+      border-radius: 8px;
+      font-size: 1.5rem;
+      padding:21.5px 0;
+      text-decoration: none;
+      color:var(--cor-secundaria);
+      font-family: var(--font-secundaria); 
+      font-weight: 600;
+}
+.apresentacao__links__navegacao:hover{               /*para fazer um botão dinâmico é necessário implementar qual animação será usada*/
+      background-color: var(--cor-hover);       /* cria um botão dinâmico que muda de cor quando o mouse passa por cima*/
+      cursor: pointer;                          /* faz com que o cursor vire uma mão com o indicador levantado ao passar pelo botão*/
+}
+.apresentacao__links__subtitulo:hover{
+      background-color: var(--cor-hover);
+      color:var(--cor-terciaria);
+      border-radius: 8px;
+}
+.apresentacao__imagem{
+      width:50%;
+}
+.rodape{
+      background-color: var(--cor-terciaria);
+      display: flex;
+      font-family:var(--font-secundaria);
+      color: var(--cor-primaria);
+      padding: 23.64px 0px;
+      justify-content: center; 
+      font-size: 1.5rem;
+      font-weight: 400;
+}
+@media(max-width: 933px){   
+      .cabecalho{
+            padding:10%;
+
+      }
+      .cabecalho_menu{
+            justify-content: center;
+      }
+      body{
+
+            background-color: purple;
+      }
+      .apresentacao {
+            flex-direction: column-reverse;
+            gap: 30px;
+            padding:0% 5%;    
+      }
+      .apresntacao__conteudo{
+            width: auto;
+      }
+      .rodape{
+            margin-top: 4%;
+      }
+}
